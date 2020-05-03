@@ -1,0 +1,4 @@
+name: xlevel
+main: com.gyanburu.Xlevel
+version: 1.0-SNAPSHOT
+api-version: 1.13

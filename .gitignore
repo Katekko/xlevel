@@ -1,0 +1,18 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+/out
+/old/
+servers/spigot 1.15.2/logs
+servers/spigot 1.15.2/world
+servers/spigot 1.15.2/world_nether
+servers/spigot 1.15.2/world_the_end
+servers/spigot 1.15.2/spigot-1.15.2.jar
+servers/spigot 1.15.2/update.bat
+servers/spigot 1.15.2/plugins
+servers/spigot 1.15.2/crash-reports
+
