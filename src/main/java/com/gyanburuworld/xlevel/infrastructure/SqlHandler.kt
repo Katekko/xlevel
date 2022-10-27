@@ -12,17 +12,15 @@ import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 
-class SqlHandler {
-    companion object {
-        fun initialize(dataFolder : File) {
-            val absolutPath = dataFolder.absolutePath.substring(0, dataFolder.absolutePath.length - "xlevel".length)
-            Files.createDirectories(Paths.get("$absolutPath/xLevel-data/"))
-            Database.connect("jdbc:sqlite:$absolutPath/xLevel-data/data.db", "org.sqlite.JDBC")
-            TransactionManager.manager.defaultIsolationLevel = Connection.TRANSACTION_SERIALIZABLE
-            transaction {
-                addLogger(StdOutSqlLogger)
-                SchemaUtils.create(PlayerTable)
-            }
+object SqlHandler {
+    fun initialize(dataFolder: File) {
+        val absolutPath = dataFolder.absolutePath.substring(0, dataFolder.absolutePath.length - "xlevel".length)
+        Files.createDirectories(Paths.get("$absolutPath/xLevel-data/"))
+        Database.connect("jdbc:sqlite:$absolutPath/xLevel-data/data.db", "org.sqlite.JDBC")
+        TransactionManager.manager.defaultIsolationLevel = Connection.TRANSACTION_SERIALIZABLE
+        transaction {
+            addLogger(StdOutSqlLogger)
+            SchemaUtils.create(PlayerTable)
         }
     }
 }

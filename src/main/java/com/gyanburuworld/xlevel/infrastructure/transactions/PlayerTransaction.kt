@@ -8,16 +8,14 @@ import org.jetbrains.exposed.dao.id.EntityID
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.transactions.transaction
 
-class PlayerTransaction {
-    companion object{
-        fun createPlayer(player : Player){
-            transaction {
-                PlayerTable.insert {
-                    it[id] = EntityID(player.uniqueId, PlayerTable)
-                    it[nickname] = player.name
-                    it[level] = 0
-                    it[exp] = 0
-                }
+object PlayerTransaction {
+    fun createPlayer(player: Player) {
+        transaction {
+            PlayerTable.insert {
+                it[id] = EntityID(player.uniqueId, PlayerTable)
+                it[nickname] = player.name
+                it[level] = 0
+                it[exp] = 0
             }
         }
     }

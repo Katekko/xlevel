@@ -5,18 +5,16 @@ import org.bukkit.entity.Player
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.*
 
-class PlayerQuery {
-    companion object {
-        fun findById(id: UUID): PlayerDao? {
-            var dao: PlayerDao? = null
-            transaction {
-                dao = PlayerDao.findById(id)
-            }
-            return dao
+object PlayerQuery {
+    fun findById(id: UUID): PlayerDao? {
+        var dao: PlayerDao? = null
+        transaction {
+            dao = PlayerDao.findById(id)
         }
+        return dao
+    }
 
-        fun hasAny(player: Player): Boolean {
-            return findById(player.uniqueId) != null
-        }
+    fun hasAny(player: Player): Boolean {
+        return findById(player.uniqueId) != null
     }
 }
