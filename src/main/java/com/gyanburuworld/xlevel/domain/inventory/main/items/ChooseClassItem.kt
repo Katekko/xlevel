@@ -1,6 +1,7 @@
-package com.gyanburuworld.xlevel.domain.items
+package com.gyanburuworld.xlevel.domain.inventory.main.items
 
-import com.gyanburuworld.xlevel.domain.inventory.InventoryUtil
+import com.gyanburuworld.xlevel.domain.items.ItemBase
+import com.gyanburuworld.xlevel.domain.utils.InventoryUtils
 import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.enchantments.Enchantment
@@ -8,7 +9,7 @@ import org.bukkit.enchantments.Enchantment
 object ChooseClassItem : ItemBase() {
     override val name =  "Choose Class"
     override val item =
-        InventoryUtil.createGuiItem(
+        InventoryUtils.createGuiItem(
             Material.DIAMOND_SWORD,
             name,
             "${ChatColor.GREEN} Click to choose your class",

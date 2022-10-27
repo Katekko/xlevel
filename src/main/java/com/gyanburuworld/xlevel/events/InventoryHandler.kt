@@ -1,7 +1,7 @@
 package com.gyanburuworld.xlevel.events
 
 import com.gyanburuworld.xlevel.domain.inventory.InventoryBase
-import com.gyanburuworld.xlevel.domain.inventory.MainInventory
+import com.gyanburuworld.xlevel.domain.inventory.main.MainInventory
 import com.gyanburuworld.xlevel.domain.utils.InventoryUtils
 import org.bukkit.Material
 import org.bukkit.entity.Player

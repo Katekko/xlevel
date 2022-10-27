@@ -1,10 +1,11 @@
-package com.gyanburuworld.xlevel.domain.inventory
+package com.gyanburuworld.xlevel.domain.inventory.main
 
 import com.gyanburuworld.xlevel.commands.PlayerCommand
-import com.gyanburuworld.xlevel.domain.items.ChooseClassItem
-import com.gyanburuworld.xlevel.domain.items.InfoClassItem
-import com.gyanburuworld.xlevel.domain.items.MenuItem
-import com.gyanburuworld.xlevel.domain.items.StatusItem
+import com.gyanburuworld.xlevel.domain.inventory.InventoryBase
+import com.gyanburuworld.xlevel.domain.inventory.main.items.ChooseClassItem
+import com.gyanburuworld.xlevel.domain.inventory.main.items.InfoClassItem
+import com.gyanburuworld.xlevel.domain.inventory.main.items.MenuItem
+import com.gyanburuworld.xlevel.domain.inventory.main.items.StatusItem
 import com.gyanburuworld.xlevel.domain.utils.ItemUtils
 import net.kyori.adventure.text.Component
 import org.bukkit.Bukkit

@@ -1,7 +1,7 @@
 package com.gyanburuworld.xlevel.events
 
-import com.gyanburuworld.xlevel.domain.inventory.MainInventory
-import com.gyanburuworld.xlevel.domain.items.MenuItem
+import com.gyanburuworld.xlevel.domain.inventory.main.MainInventory
+import com.gyanburuworld.xlevel.domain.inventory.main.items.MenuItem
 import com.gyanburuworld.xlevel.domain.utils.ItemUtils
 import com.gyanburuworld.xlevel.infrastructure.queries.PlayerQuery
 import com.gyanburuworld.xlevel.infrastructure.transactions.PlayerTransaction
