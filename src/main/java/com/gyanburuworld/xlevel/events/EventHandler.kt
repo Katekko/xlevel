@@ -6,5 +6,6 @@ import org.bukkit.plugin.Plugin
 object EventHandler {
     fun initializer(server: Server, plugin: Plugin) {
         server.pluginManager.registerEvents(PlayerHandler(), plugin)
+        server.pluginManager.registerEvents(BlockHandler(), plugin)
     }
 }
