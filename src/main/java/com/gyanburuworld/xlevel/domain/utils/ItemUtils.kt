@@ -4,7 +4,7 @@ import net.kyori.adventure.text.TextComponent
 import org.bukkit.inventory.ItemStack
 
 object ItemUtils {
-    fun getDisplayName(item: ItemStack?) : String {
+    fun getDisplayNameFromComponent(item: ItemStack?) : String {
         if (item != null && item.itemMeta != null && item.itemMeta.hasDisplayName()) {
             val itemName = item.itemMeta?.displayName() as TextComponent
             return itemName.content()

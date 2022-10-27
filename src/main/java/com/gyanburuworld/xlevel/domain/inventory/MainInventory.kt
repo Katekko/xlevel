@@ -13,19 +13,19 @@ import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 
 object MainInventory : InventoryBase() {
-    private val getTitleInventory = "${ChatColor.DARK_PURPLE} xLevel Menu ${ChatColor.YELLOW} ~~"
+    override val title = "${ChatColor.DARK_PURPLE} xLevel Menu ${ChatColor.YELLOW} ~~"
 
     init {
-        inventory = Bukkit.createInventory(this, 9, Component.text(getTitleInventory))
+        inventory = Bukkit.createInventory(this, 9, Component.text(title))
         createInventory()
     }
 
     fun isMenuItem(item: ItemStack?): Boolean {
-        return ItemUtils.getDisplayName(item) == MenuItem.name
+        return ItemUtils.getDisplayNameFromComponent(item) == MenuItem.name
     }
 
     override fun executeCommand(item: ItemStack?, player: Player): ItemStack? {
-        return when (ItemUtils.getDisplayName(item)) {
+        return when (ItemUtils.getDisplayNameFromComponent(item)) {
             StatusItem.name -> {
                 player.closeInventory()
                 PlayerCommand.showStatus(player)

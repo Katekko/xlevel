@@ -7,5 +7,6 @@ object EventHandler {
     fun initializer(server: Server, plugin: Plugin) {
         server.pluginManager.registerEvents(PlayerHandler(), plugin)
         server.pluginManager.registerEvents(BlockHandler(), plugin)
+        server.pluginManager.registerEvents(InventoryHandler(), plugin)
     }
 }

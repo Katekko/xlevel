@@ -7,6 +7,7 @@ import org.bukkit.inventory.InventoryHolder
 import org.bukkit.inventory.ItemStack
 
 abstract class InventoryBase : InventoryHolder {
+    abstract val title: String
     var inv: Inventory = inventory
 
     abstract fun createInventory()
