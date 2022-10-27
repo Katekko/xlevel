@@ -10,7 +10,7 @@ class PlayerHandler : Listener {
     @EventHandler
     fun onPlayerJoin(event: PlayerJoinEvent) {
         val player = event.player
-        if (!PlayerQuery.playerAlreadyExists(player.uniqueId)) {
+        if (!PlayerQuery.hasAny(player)) {
             PlayerTransaction.createPlayer(player)
         }
     }
