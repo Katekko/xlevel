@@ -6,7 +6,7 @@ import java.util.*
 
 class PlayerQuery {
     companion object {
-        fun getPlayerById(id: UUID): PlayerDao? {
+        fun findById(id: UUID): PlayerDao? {
             var dao: PlayerDao? = null
             transaction {
                 dao = PlayerDao.findById(id)
@@ -14,8 +14,8 @@ class PlayerQuery {
             return dao
         }
 
-        fun playerAlreadyExists(id: UUID): Boolean {
-            return getPlayerById(id) != null
+        fun hasAnyById(id: UUID): Boolean {
+            return findById(id) != null
         }
     }
 }
