@@ -45,7 +45,10 @@ class PlayerHandler : Listener {
 
     @EventHandler
     fun onPlayerDeath(event: PlayerDeathEvent) {
-        event.drops.remove(MenuItem.item)
+        val menuDrops = event.drops.filter { it.itemMeta == MenuItem.item.itemMeta }
+        for (drop in menuDrops) {
+            event.drops.remove(drop)
+        }
     }
 
     @EventHandler
