@@ -1,6 +1,6 @@
 package com.gyanburuworld.xlevel.events
 
-import com.gyanburuworld.xlevel.domain.inventory.InventoryBase
+import com.gyanburuworld.xlevel.domain.inventory.info_classes.InfoClassesInventory
 import com.gyanburuworld.xlevel.domain.inventory.main.MainInventory
 import com.gyanburuworld.xlevel.domain.utils.InventoryUtils
 import org.bukkit.Material
@@ -14,7 +14,7 @@ import org.bukkit.event.inventory.InventoryInteractEvent
 import org.bukkit.inventory.ItemStack
 
 class InventoryHandler : Listener {
-    private val inventories = Array<InventoryBase>(1) { MainInventory }
+    private val inventories = arrayOf ( MainInventory, InfoClassesInventory )
 
     private fun isCustomInventory(event: InventoryInteractEvent) : Boolean {
         val title = InventoryUtils.getTitleFromEventComponent(event)
@@ -23,7 +23,8 @@ class InventoryHandler : Listener {
 
     private fun executeCommand(inventoryTitle: String, player: Player, itemClicked: ItemStack) {
         val inventory = inventories.find { it.title == inventoryTitle }
-        inventory?.executeCommand(itemClicked, player)
+        val item = inventory?.items?.find { it.item == itemClicked }
+        item?.action(player)
     }
 
     @EventHandler

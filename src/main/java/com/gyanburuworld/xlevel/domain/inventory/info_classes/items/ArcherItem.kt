@@ -1,4 +1,4 @@
-package com.gyanburuworld.xlevel.domain.inventory.main.items
+package com.gyanburuworld.xlevel.domain.inventory.info_classes.items
 
 import com.gyanburuworld.xlevel.commands.PlayerCommand
 import com.gyanburuworld.xlevel.domain.items.ItemBase
@@ -7,17 +7,17 @@ import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.entity.Player
 
-object StatusItem : ItemBase() {
-    override val name = "Status"
+object ArcherItem : ItemBase() {
+    override val name = "Archer"
     override val item =
         InventoryUtils.createGuiItem(
-            Material.WRITABLE_BOOK,
+            Material.ARROW,
             name,
-            "${ChatColor.GREEN} Click to view your status"
+            "${ChatColor.GREEN} Click to see the info"
         )
 
     override fun action(player: Player) {
-        PlayerCommand.showStatus(player)
+        PlayerCommand.infoArcher(player)
         player.inventory.close()
     }
 }

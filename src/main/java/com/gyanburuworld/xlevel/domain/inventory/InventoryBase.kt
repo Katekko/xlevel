@@ -1,17 +1,16 @@
 package com.gyanburuworld.xlevel.domain.inventory
 
-import net.kyori.adventure.text.TextComponent
+import com.gyanburuworld.xlevel.domain.items.ItemBase
 import org.bukkit.entity.Player
 import org.bukkit.inventory.Inventory
 import org.bukkit.inventory.InventoryHolder
-import org.bukkit.inventory.ItemStack
 
 abstract class InventoryBase : InventoryHolder {
     abstract val title: String
+    abstract val items: Array<ItemBase>
     var inv: Inventory = inventory
 
-    abstract fun createInventory()
-    abstract fun executeCommand(item: ItemStack?, player: Player): ItemStack?
+    protected abstract fun createInventory()
 
     override fun getInventory(): Inventory {
         return inv

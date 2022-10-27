@@ -29,7 +29,7 @@ class PlayerHandler : Listener {
     @EventHandler
     fun onPlayerInteract(event: PlayerInteractEvent) {
         if (event.action === Action.RIGHT_CLICK_AIR) {
-            if (MenuItem.isEqual(ItemUtils.getDisplayNameFromComponent(event.item))) {
+            if (MenuItem.isEqual(ItemUtils.getDisplayNameFromItemStack(event.item))) {
                 event.isCancelled = true
                 MainInventory.openInventory(event.player)
             }
@@ -38,7 +38,7 @@ class PlayerHandler : Listener {
 
     @EventHandler
     fun onPlayerDropItem(event: PlayerDropItemEvent) {
-        if (MenuItem.isEqual(ItemUtils.getDisplayNameFromComponent(event.itemDrop.itemStack))) {
+        if (MenuItem.isEqual(ItemUtils.getDisplayNameFromItemStack(event.itemDrop.itemStack))) {
             event.isCancelled = true
         }
     }
