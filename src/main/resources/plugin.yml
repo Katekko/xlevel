@@ -1,0 +1,4 @@
+name: Xlevel
+version: '${project.version}'
+main: com.gyanburuworld.xlevel.Xlevel
+api-version: 1.19
