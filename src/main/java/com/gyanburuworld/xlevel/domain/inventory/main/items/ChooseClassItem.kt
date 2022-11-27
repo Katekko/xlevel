@@ -1,5 +1,7 @@
 package com.gyanburuworld.xlevel.domain.inventory.main.items
 
+import com.gyanburuworld.xlevel.commands.PlayerCommand
+import com.gyanburuworld.xlevel.domain.inventory.choose_class.ChooseClassInventory
 import com.gyanburuworld.xlevel.domain.items.ItemBase
 import com.gyanburuworld.xlevel.domain.utils.InventoryUtils
 import org.bukkit.ChatColor
@@ -17,6 +19,6 @@ object ChooseClassItem : ItemBase() {
             enchantment = Enchantment.DAMAGE_ALL
         )
     override fun action(player: Player) {
-        TODO("Not yet implemented")
+        ChooseClassInventory.openInventory(player)
     }
 }

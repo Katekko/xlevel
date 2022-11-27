@@ -10,6 +10,8 @@ import org.bukkit.inventory.ItemStack
 import java.util.ArrayList
 
 object InventoryUtils {
+
+
     fun getTitleFromEventComponent(event: InventoryInteractEvent) : String {
         val titleComponent = event.view.title() as TextComponent
         return titleComponent.content()

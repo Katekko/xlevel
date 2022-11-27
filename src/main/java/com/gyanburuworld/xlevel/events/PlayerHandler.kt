@@ -1,5 +1,6 @@
 package com.gyanburuworld.xlevel.events
 
+import com.gyanburuworld.xlevel.domain.factories.inventories.InventoryFactory
 import com.gyanburuworld.xlevel.domain.inventory.main.MainInventory
 import com.gyanburuworld.xlevel.domain.inventory.main.items.MenuItem
 import com.gyanburuworld.xlevel.domain.utils.ItemUtils
@@ -31,7 +32,7 @@ class PlayerHandler : Listener {
         if (event.action === Action.RIGHT_CLICK_AIR) {
             if (MenuItem.isEqual(ItemUtils.getDisplayNameFromItemStack(event.item))) {
                 event.isCancelled = true
-                MainInventory.openInventory(event.player)
+                InventoryFactory.makeMainInventory(event.player).openInventory()
             }
         }
     }

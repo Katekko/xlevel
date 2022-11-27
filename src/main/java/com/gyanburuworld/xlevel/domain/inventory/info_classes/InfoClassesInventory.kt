@@ -9,13 +9,14 @@ import com.gyanburuworld.xlevel.domain.items.BackItem
 import net.kyori.adventure.text.Component
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
+import org.bukkit.entity.Player
 
-object InfoClassesInventory : InventoryBase() {
+class InfoClassesInventory(player: Player) : InventoryBase(player) {
     override val title: String = "${ChatColor.DARK_PURPLE} Info Classes ${ChatColor.YELLOW} ~~"
-    override val items = arrayOf ( WarriorItem, MageItem, ArcherItem, PriestItem, BackItem )
+    override val items = arrayOf(WarriorItem, MageItem, ArcherItem, PriestItem, BackItem)
 
     init {
-        inventory = Bukkit.createInventory(this,  27, Component.text(title))
+        inventory = Bukkit.createInventory(this, 27, Component.text(title))
         createInventory()
     }
 

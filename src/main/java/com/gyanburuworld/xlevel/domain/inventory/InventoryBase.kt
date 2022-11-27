@@ -5,7 +5,7 @@ import org.bukkit.entity.Player
 import org.bukkit.inventory.Inventory
 import org.bukkit.inventory.InventoryHolder
 
-abstract class InventoryBase : InventoryHolder {
+abstract class InventoryBase(private val player: Player) : InventoryHolder {
     abstract val title: String
     abstract val items: Array<ItemBase>
     var inv: Inventory = inventory
@@ -20,7 +20,7 @@ abstract class InventoryBase : InventoryHolder {
         this.inv = inventory
     }
 
-    fun openInventory(player: Player) {
+    fun openInventory() {
         player.openInventory(this.inv)
     }
 }

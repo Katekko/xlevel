@@ -1,4 +1,4 @@
-package com.gyanburuworld.xlevel.domain.inventory.info_classes.items
+package com.gyanburuworld.xlevel.domain.inventory.choose_class.items
 
 import com.gyanburuworld.xlevel.commands.PlayerCommand
 import com.gyanburuworld.xlevel.domain.items.ItemBase
@@ -13,7 +13,7 @@ object PriestItem : ItemBase() {
         InventoryUtils.createGuiItem(
             Material.IRON_AXE,
             name,
-            "${ChatColor.GREEN} Click to see the info"
+            "${ChatColor.GREEN} Click to choose this class"
         )
 
     override fun action(player: Player) {
